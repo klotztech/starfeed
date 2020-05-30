@@ -1,0 +1,19 @@
+<h1>
+	<a
+		href="https://www.mercedes-benz.de/passengercars/mercedes-benz-cars/vehicle-search.html#/u/used-vehicles/d/id/{{&id}}"
+	>
+		{{vehicleConfiguration.salesDescription}}
+	</a>
+</h1>
+
+<h2>{{priceInfo.offerPrice.gross}}</h2>
+{{#photos}}
+<img src="{{&url}}" />
+{{/photos}}
+
+<h2>Sonderausstattung</h2>
+<ul>
+	{{#goodStuff}}
+	<li>{{name}}</li>
+	{{/goodStuff}}
+</ul>

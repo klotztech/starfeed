@@ -1,0 +1,30 @@
+{
+	"name": "starfeed",
+	"version": "1.0.0",
+	"description": "RSS Feed Generator for Mercedes Benz Used Vehicle Search",
+	"main": "src/server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon -e js,html src/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FastDeath/starfeed.git"
+	},
+	"author": "Steffen K.",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/FastDeath/starfeed/issues"
+	},
+	"homepage": "https://github.com/FastDeath/starfeed#readme",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"express": "^4.17.1",
+		"feed": "^4.2.0",
+		"http-status-codes": "^1.4.0",
+		"mustache": "^4.0.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
+}

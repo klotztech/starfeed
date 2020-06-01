@@ -25,7 +25,11 @@ exports.overview = async function () {
 	const feed = new Feed(meta);
 
 	for (vehicle of results.fomVehicles) {
-		console.log(vehicle);
+		// require("fs").writeFileSync(
+		// 	require("path").join(__dirname, `../dat/${vehicle.id}.json`),
+		// 	JSON.stringify(vehicle, null, 4)
+		// );
+		// console.log(vehicle);
 
 		const link = `https://www.mercedes-benz.de/passengercars/mercedes-benz-cars/vehicle-search.html#/u/used-vehicles/d/id/${vehicle.id}`;
 
@@ -36,13 +40,13 @@ exports.overview = async function () {
 			primaryImage = vehicle.media.images.USED.sort(
 				utils.propSort((img) => img.format)
 			).find(() => true);
-			console.log(vehicle.media.images.USED);
+			// console.log(vehicle.media.images.USED);
 		}
 
 		const content = await contentRenderer.render(vehicle);
-		console.log(content);
+		// console.log(content);
 
-		const title = `${vehicle.priceInfo.offerPrice.gross} - ${vehicle.vehicleConfiguration.salesDescription}`;
+		const title = `${vehicle.priceInfo.offerPrice.gross} - ${vehicle.condition.mileage} - ${vehicle.vehicleConfiguration.salesDescription}`;
 
 		feed.addItem({
 			id: vehicle.id,

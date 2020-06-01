@@ -6,7 +6,18 @@
 	</a>
 </h1>
 
-<h2>{{priceInfo.offerPrice.gross}}</h2>
+<h2>
+	{{priceInfo.offerPrice.gross}} - {{condition.mileage}} -
+	{{condition.firstRegistrationDate}} {{#salesInfo.salesProgram}} [{{text}}]
+	{{/salesInfo.salesProgram}}
+</h2>
+
+{{#remark}}
+<p>{{.}}</p>
+{{/remark}}
+
+<hr />
+
 {{#photos}}
 <img src="{{&url}}" />
 {{/photos}}

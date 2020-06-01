@@ -1,7 +1,10 @@
 const express = require("express");
+const morgan = require("morgan");
 const feed = require("./feed");
 
 var app = express();
+
+app.use(morgan("tiny"));
 
 app.get("/", function (req, res) {
 	res.send("hello world");
